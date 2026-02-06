@@ -54,9 +54,11 @@ Organize all lab resources into a single resource group for easy management and 
 
 **Expected Result:** A dedicated resource group for all lab components.
 
-📸 *Screenshot:* Resource group overview page
+<p align="center">
+Resource group overview: <br/>
+<img src="https://imgur.com/a/4axzjHX" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 
----
 
 ## STEP 2: Create Virtual Network (VNet)
 
@@ -72,8 +74,11 @@ Provide internal networking and DNS communication between machines.
    - Subnet Range: `10.0.1.0/24`
 3. Review and Create
 
-📸 *Screenshot:* VNet address space and subnet configuration
-
+📸 
+<p align="center">
+VNet address space and subnet configuration: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 3: Deploy Domain Controller (DC01)
@@ -87,8 +92,11 @@ Provide internal networking and DNS communication between machines.
 - Subnet: `IT-Subnet`
 - Public Ports: RDP (3389)
 
-📸 *Screenshot:* VM overview page
-
+📸 
+<p align="center">
+VM overview: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 4: Assign Static Private IP (CRITICAL)
@@ -102,8 +110,11 @@ Active Directory requires consistent DNS records.
 3. Change **Dynamic → Static**  
 4. Set IP: `10.0.1.4`
 
-📸 *Screenshot:* Static IP configuration
-
+📸 
+<p align="center">
+Static IP configuration: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 5: Install Active Directory Domain Services
@@ -114,8 +125,11 @@ Active Directory requires consistent DNS records.
 3. Select **Active Directory Domain Services**  
 4. Install
 
-📸 *Screenshot:* AD DS installation confirmation
-
+📸 
+<p align="center">
+AD DS installation confirmation: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 6: Promote Server to Domain Controller
@@ -127,8 +141,11 @@ Active Directory requires consistent DNS records.
 4. Set DSRM password  
 5. Reboot
 
-📸 *Screenshot:* Domain promotion summary
-
+📸 
+<p align="center">
+omain promotion summary: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 7: Create Organizational Units and Users
@@ -143,8 +160,11 @@ Active Directory requires consistent DNS records.
    - adoe
    - helpdesk1
 
-📸 *Screenshot:* ADUC showing OUs and users
-
+📸 
+<p align="center">
+ADUC showing OUs and users: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 8: Deploy Client Machine (CLIENT01)
@@ -158,8 +178,11 @@ Active Directory requires consistent DNS records.
 ### DNS (CRITICAL)
 Set DNS to: `10.0.1.4`
 
-📸 *Screenshot:* Client DNS settings
-
+📸 
+<p align="center">
+Client DNS settings: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## STEP 9: Join Client to Domain
@@ -171,8 +194,11 @@ Set DNS to: `10.0.1.4`
 4. Authenticate  
 5. Restart
 
-📸 *Screenshot:* Successful domain join
-
+📸 
+<p align="center">
+Successful domain join: <br/>
+<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<br />
 ---
 
 ## Troubleshooting Notes
@@ -187,7 +213,7 @@ After completing this project, you will have learned:
 - How to plan and configure Azure Virtual Networks and subnets for secure communication  
 - How to deploy Windows Server VMs as Domain Controllers and configure static IPs  
 - How to install AD DS, promote a Domain Controller, and create a new forest  
-- How to create Organizational Units and users for enterprise-like structure  
+- How to create Organizational Units and users for enterprise like structure  
 - How to deploy a client VM and join it to the domain  
 - How to troubleshoot domain join and DNS-related issues  
 - Practical understanding of enterprise-level IT administration and helpdesk-ready skills
