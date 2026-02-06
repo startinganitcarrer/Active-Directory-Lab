@@ -53,11 +53,10 @@ Organize all lab resources into a single resource group for easy management and 
 4. Click **Create**
 
 **Expected Result:** A dedicated resource group for all lab components.
-
 <p align="center">
-Resource group overview: <br/>
-<img src="https://imgur.com/a/4axzjHX.jpg" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+Resource group overview
+<img width="944" height="679" alt="image" src="https://github.com/user-attachments/assets/fd62a641-4e92-4e44-9fa7-30bcbf8485ed" />
+
 
 
 ## STEP 2: Create Virtual Network (VNet)
