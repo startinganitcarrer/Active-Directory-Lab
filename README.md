@@ -56,7 +56,7 @@ Organize all lab resources into a single resource group for easy management and 
 
 <p align="center">
 Resource group overview: <br/>
-<img src="https://imgur.com/a/4axzjHX.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
+<img src="https://imgur.com/a/4axzjHX.jpg" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
 <br />
 
 
