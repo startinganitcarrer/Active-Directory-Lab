@@ -48,7 +48,7 @@ Organize all lab resources into a single resource group for easy management and 
 1. Sign in to Azure Portal  
 2. Go to **Resource Groups → Create**
 3. Configure:
-   - Name: `IT-Lab-RG`
+   - Name: `HomeLab`
    - Region: Canada Central (or East US)
 4. Click **Create**
 
