@@ -75,10 +75,10 @@ Provide internal networking and DNS communication between machines.
 
 📸 
 <p align="center">
-VNet address space and subnet configuration: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
----
+VNet address space and subnet configuration
+<img width="952" height="780" alt="image" src="https://github.com/user-attachments/assets/0b94dcab-17c7-4e19-a109-728d172f80ec" />
+
+
 
 ## STEP 3: Deploy Domain Controller (DC01)
 
@@ -93,9 +93,9 @@ VNet address space and subnet configuration: <br/>
 
 📸 
 <p align="center">
-VM overview: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+VM overview
+<img width="945" height="954" alt="image" src="https://github.com/user-attachments/assets/c4ce9495-03f7-4bed-9049-0345c7d6594d" />
+
 ---
 
 ## STEP 4: Assign Static Private IP (CRITICAL)
@@ -107,13 +107,13 @@ Active Directory requires consistent DNS records.
 1. DC01 → Networking → Network Interface  
 2. IP Configuration  
 3. Change **Dynamic → Static**  
-4. Set IP: `10.0.1.4`
+4. Set IP: `172.16.0.4`
 
 📸 
 <p align="center">
-Static IP configuration: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+Static IP configuration
+<img width="932" height="716" alt="image" src="https://github.com/user-attachments/assets/b379be44-63b4-4127-ae65-02820d998b23" />
+
 ---
 
 ## STEP 5: Install Active Directory Domain Services
