@@ -159,6 +159,20 @@ domain promotion summary
    - adoe
    - helpdesk1
 
+#
+## Learning Outcome:
+Creating Active Directory users using PowerShell scripts.
+
+Step 1: Import the Active Directory module:
+    Import-Module ActiveDirectory
+
+Step 2: View syntax for New-ADUser:
+    Get-Command New-ADUser -Syntax
+
+Step 3: Create a user (example):
+    New-ADUser -Name "jsmith"
+#
+
 📸 
 <p align="center">
 ADUC showing OUs and users:
