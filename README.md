@@ -20,7 +20,7 @@
 
 ## Tools & Technologies
 - **Microsoft Azure** (Free Tier)  
-- **Windows Server 2022** (Domain Controller)  
+- **Windows Server 2025** (Domain Controller)  
 - **Windows 10/11** (Client VM)  
 - **Active Directory Domain Services (AD DS)**  
 - **Active Directory Users and Computers (ADUC)**  
@@ -161,9 +161,10 @@ domain promotion summary
 
 📸 
 <p align="center">
-ADUC showing OUs and users: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+ADUC showing OUs and users:
+<img width="936" height="888" alt="image" src="https://github.com/user-attachments/assets/f4816c4a-6013-4602-af29-54a27b0ef461" />
+
+
 ---
 
 ## STEP 8: Deploy Client Machine (CLIENT01)
