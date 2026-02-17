@@ -137,14 +137,14 @@ AD DS installation confirmation
 1. Server Manager → **Promote this server**  
 2. Add a new forest  
 3. Domain: `homelab.local`  
-4. Set DSRM password ( # This is the recovery password in case you want to login to the domain controller) 
+4. Set DSRM password  # This is the recovery password in case you want to login to the domain controller.
 5. Reboot
 
 📸 
 <p align="center">
-omain promotion summary: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+domain promotion summary
+<img width="958" height="794" alt="image" src="https://github.com/user-attachments/assets/f8d365c6-8d36-43e2-a4a3-cf3e0df90a59" />
+
 ---
 
 ## STEP 7: Create Organizational Units and Users
