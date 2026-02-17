@@ -126,9 +126,9 @@ Static IP configuration
 
 📸 
 <p align="center">
-AD DS installation confirmation: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+AD DS installation confirmation
+<img width="960" height="796" alt="image" src="https://github.com/user-attachments/assets/e0f8132b-d65e-471d-a5c1-fa67c62813ff" />
+
 ---
 
 ## STEP 6: Promote Server to Domain Controller
