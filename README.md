@@ -136,7 +136,7 @@ AD DS installation confirmation
 ### Actions
 1. Server Manager → **Promote this server**  
 2. Add a new forest  
-3. Domain: `lab.local`  
+3. Domain: `homelab.local`  
 4. Set DSRM password  
 5. Reboot
 
