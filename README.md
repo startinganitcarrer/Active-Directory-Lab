@@ -190,13 +190,13 @@ ADUC showing OUs and users:
 - VNet: `IT-Lab-VNet`
 
 ### DNS (CRITICAL)
-Set DNS to: `10.0.1.4`
+Set DNS to: `172.18.0.4`
 
 📸 
 <p align="center">
-Client DNS settings: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+Client DNS settings
+<img width="1481" height="888" alt="image" src="https://github.com/user-attachments/assets/e941c9da-3301-4097-83bb-3db0560734a3" />
+
 ---
 
 ## STEP 9: Join Client to Domain
@@ -210,9 +210,10 @@ Client DNS settings: <br/>
 
 📸 
 <p align="center">
-Successful domain join: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Simulating a real world IT scenerio"/>
-<br />
+Successful domain join
+
+<img width="1557" height="844" alt="image" src="https://github.com/user-attachments/assets/5ee9afe8-d562-481d-a71f-f339209acf4c" />
+
 ---
 
 ## Troubleshooting Notes
