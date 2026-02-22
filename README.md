@@ -41,13 +41,13 @@ This lab demonstrates a complete Active Directory deployment in Azure, including
 ## 🏗️ Lab Architecture
 
 ```text
-Azure Virtual Network (10.0.0.0/16)
+Azure Virtual Network (172.18.0.0/16)
 │
-├── Subnet: IT-Subnet (10.0.1.0/24)
-│     ├── DC01 — Windows Server 2022 (10.0.1.4)
+├── Subnet: IT-Subnet (172.18.0.0/24)
+│     ├── DC01 — Windows Server 2022 (10.18.0.4)
 │     └── CLIENT01 — Windows 10/11
 │
-└── DNS → Domain Controller (10.0.1.4)
+└── DNS → Domain Controller (172.18.0.4)
 ```
 
 ## STEP 1: Azure Account & Resource Organization
@@ -79,35 +79,35 @@ Provide internal networking and DNS communication between machines.
 ### Actions
 1. Go to **Virtual Networks → Create**
 2. Configure:
-   - Name: `IT-Lab-VNet`
-   - Address Space: `10.0.0.0/16`
-   - Subnet: `IT-Subnet`
-   - Subnet Range: `10.0.1.0/24`
+   - Name: `vnet-canadacentral-2`
+   - Address Space: `172.18.0.0/16`
+   - Subnet: `snet-canadacentral-1`
+   - Subnet Range: `172.18.0.0/24`
 3. Review and Create
 
 📸 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0b94dcab-17c7-4e19-a109-728d172f80ec" width="750">
+  <img src="https://github.com/user-attachments/assets/92e5eb3e-3b70-475a-bc72-21de32d3ac61" width="750">
   <br>
   <em>VNet Address Space and Subnet Configuration</em>
 </p>
 
 
 
-## STEP 3: Deploy Domain Controller (DC01)
+## STEP 3: Deploy Domain Controller (Server2019)
 
 ### VM Configuration
-- Name: `DC01`
+- Name: `Server2019`
 - OS: Windows Server 2022 Datacenter
 - Size: Standard B2s
 - Authentication: Username & Password
-- VNet: `IT-Lab-VNet`
-- Subnet: `IT-Subnet`
+- VNet: `vnet-canadacentral-2`
+- Subnet: `snet-canadacentral-1`
 - Public Ports: RDP (3389)
 
 📸 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c4ce9495-03f7-4bed-9049-0345c7d6594d" width="750">
+  <img src="https://github.com/user-attachments/assets/826d9af2-79dc-47c6-a4e8-3e10a44f52b6" width="750">
   <br>
   <em>DC01 Virtual Machine Overview</em>
 </p>
@@ -121,14 +121,14 @@ Provide internal networking and DNS communication between machines.
 Active Directory requires consistent DNS records.
 
 ### Actions
-1. DC01 → Networking → Network Interface  
+1. Server2019 → Networking → Network Interface  
 2. IP Configuration  
 3. Change **Dynamic → Static**  
-4. Set IP: `172.16.0.4`
+4. Set IP: `172.18.0.4`
 
 📸 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b379be44-63b4-4127-ae65-02820d998b23" width="750">
+  <img src="https://github.com/user-attachments/assets/a9ef5551-1427-4371-80fd-9707e7d6efe0" width="750">
   <br>
   <em>Static Private IP Assignment</em>
 </p>
@@ -138,7 +138,7 @@ Active Directory requires consistent DNS records.
 ## STEP 5: Install Active Directory Domain Services
 
 ### Actions
-1. RDP into DC01  
+1. RDP into Server2019  
 2. Server Manager → Add Roles  
 3. Select **Active Directory Domain Services**  
 4. Install
@@ -158,7 +158,7 @@ Active Directory requires consistent DNS records.
 1. Server Manager → **Promote this server**  
 2. Add a new forest  
 3. Domain: `homelab.local`  
-4. Set DSRM password  # This is the recovery password in case you want to login to the domain controller.
+4. Set DSRM password  (# This is the recovery password in case you want to login to the domain controller.)
 5. Reboot
 
 📸 
@@ -219,7 +219,7 @@ Step 3 — Create a new user (example)
 - Name: `CLIENT01`
 - OS: Windows 10 / 11
 - Size: Standard B2s
-- VNet: `IT-Lab-VNet`
+- VNet: `vnet-canadacentral-2`
 
 ### DNS (CRITICAL)
 Set DNS to: `172.18.0.4`
@@ -239,7 +239,7 @@ Set DNS to: `172.18.0.4`
 ### Actions
 1. Log into CLIENT01  
 2. System → Rename this PC → Domain  
-3. Domain: `lab.local`  
+3. Domain: `homelab.local`  
 4. Authenticate  
 5. Restart
 
