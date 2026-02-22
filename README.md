@@ -260,16 +260,16 @@ Set DNS to: `172.18.0.4`
 
 
 ## Learning Outcomes
-After completing this project, I have learned:  
+After completing this project, I have learned: 
 - Deploying Windows Server in Azure
--Configuring AD DS, DNS, and domain authentication
--Creating OUs and users
--Joining clients to a domain
--Troubleshooting DNS & networking issues
--Using PowerShell for AD automation
--Understanding enterprise-level IT administration
+- Configuring AD DS, DNS, and domain authentication
+- Creating OUs and users
+- Joining clients to a domain
+- Troubleshooting DNS & networking issues
+-  Using PowerShell for AD automation
+- Understanding enterprise-level IT administration
 
-
+---
 ## Author
 
 **Sandip Dhungana**  
