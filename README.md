@@ -38,6 +38,17 @@ This lab demonstrates a complete Active Directory deployment in Azure, including
 
 
 ---
+## 🏗️ Lab Architecture
+
+```text
+Azure Virtual Network (10.0.0.0/16)
+│
+├── Subnet: IT-Subnet (10.0.1.0/24)
+│     ├── DC01 — Windows Server 2022 (10.0.1.4)
+│     └── CLIENT01 — Windows 10/11
+│
+└── DNS → Domain Controller (10.0.1.4)
+```
 
 ## STEP 1: Azure Account & Resource Organization
 
@@ -54,8 +65,10 @@ Organize all lab resources into a single resource group for easy management and 
 
 **Expected Result:** A dedicated resource group for all lab components.
 <p align="center">
-Resource group overview
-<img width="944" height="679" alt="image" src="https://github.com/user-attachments/assets/fd62a641-4e92-4e44-9fa7-30bcbf8485ed" />
+  <img src="https://github.com/user-attachments/assets/fd62a641-4e92-4e44-9fa7-30bcbf8485ed" width="750">
+  <br>
+  <em>Resource Group Overview</em>
+</p>
 
 
 
@@ -75,8 +88,10 @@ Provide internal networking and DNS communication between machines.
 
 📸 
 <p align="center">
-VNet address space and subnet configuration
-<img width="952" height="780" alt="image" src="https://github.com/user-attachments/assets/0b94dcab-17c7-4e19-a109-728d172f80ec" />
+  <img src="https://github.com/user-attachments/assets/0b94dcab-17c7-4e19-a109-728d172f80ec" width="750">
+  <br>
+  <em>VNet Address Space and Subnet Configuration</em>
+</p>
 
 
 
@@ -93,8 +108,11 @@ VNet address space and subnet configuration
 
 📸 
 <p align="center">
-VM overview
-<img width="945" height="954" alt="image" src="https://github.com/user-attachments/assets/c4ce9495-03f7-4bed-9049-0345c7d6594d" />
+  <img src="https://github.com/user-attachments/assets/c4ce9495-03f7-4bed-9049-0345c7d6594d" width="750">
+  <br>
+  <em>DC01 Virtual Machine Overview</em>
+</p>
+
 
 ---
 
@@ -111,8 +129,10 @@ Active Directory requires consistent DNS records.
 
 📸 
 <p align="center">
-Static IP configuration
-<img width="932" height="716" alt="image" src="https://github.com/user-attachments/assets/b379be44-63b4-4127-ae65-02820d998b23" />
+  <img src="https://github.com/user-attachments/assets/b379be44-63b4-4127-ae65-02820d998b23" width="750">
+  <br>
+  <em>Static Private IP Assignment</em>
+</p>
 
 ---
 
@@ -126,8 +146,10 @@ Static IP configuration
 
 📸 
 <p align="center">
-AD DS installation confirmation
-<img width="960" height="796" alt="image" src="https://github.com/user-attachments/assets/e0f8132b-d65e-471d-a5c1-fa67c62813ff" />
+  <img src="https://github.com/user-attachments/assets/e0f8132b-d65e-471d-a5c1-fa67c62813ff" width="750">
+  <br>
+  <em>Active Directory Domain Services Installation</em>
+</p>
 
 ---
 
@@ -142,41 +164,52 @@ AD DS installation confirmation
 
 📸 
 <p align="center">
-domain promotion summary
-<img width="958" height="794" alt="image" src="https://github.com/user-attachments/assets/f8d365c6-8d36-43e2-a4a3-cf3e0df90a59" />
+  <img src="https://github.com/user-attachments/assets/f8d365c6-8d36-43e2-a4a3-cf3e0df90a59" width="750">
+  <br>
+  <em>Domain Controller Promotion Summary</em>
+</p>
 
 ---
 
 ## STEP 7: Create Organizational Units and Users
 
 ### Actions
-1. Open **Active Directory Users and Computers**
-2. Create OUs:
-   - IT
-   - HR
-3. Create Users:
-   - jsmith
-   - adoe
-   - helpdesk1
+1. Open **Active Directory Users and Computers (ADUC)**  
+2. Create Organizational Units (OUs):  
+   - IT  
+   - HR  
+3. Create Users inside the appropriate OUs:  
+   - jsmith  
+   - adoe  
+   - helpdesk1  
 
-#
-## Learning Outcome:
-Creating Active Directory users using PowerShell scripts.
+---
 
-Step 1: Import the Active Directory module:
-    Import-Module ActiveDirectory
+## 🧠 Learning Outcome: Creating AD Users with PowerShell
 
-Step 2: View syntax for New-ADUser:
-    Get-Command New-ADUser -Syntax
-
-Step 3: Create a user (example):
-    New-ADUser -Name "jsmith"
-#
-
+In addition to using ADUC, I also created users using **PowerShell**, which is the preferred method in real enterprise environments for automation and bulk user creation.
+```
+Powershell Scripts:
+Step 1 — Import the Active Directory module
+-Import-Module ActiveDirectory
+Step 2 — View the syntax for creating users
+-Get-Command New-ADUser -Syntax
+Step 3 — Create a new user (example)
+-New-ADUser -Name "jsmith" `
+  -GivenName "John" `
+  -Surname "Smith" `
+  -SamAccountName "jsmith" `
+  -UserPrincipalName "jsmith@homelab.local" `
+  -Path "OU=IT,DC=homelab,DC=local" `
+  -AccountPassword (Read-Host -AsSecureString "Enter Password") `
+  -Enabled $true
+```
 📸 
 <p align="center">
-ADUC showing OUs and users:
-<img width="936" height="888" alt="image" src="https://github.com/user-attachments/assets/f4816c4a-6013-4602-af29-54a27b0ef461" />
+  <img src="https://github.com/user-attachments/assets/f4816c4a-6013-4602-af29-54a27b0ef461" width="750">
+  <br>
+  <em>Active Directory Users and Computers — OUs and Users</em>
+</p>
 
 
 ---
@@ -194,8 +227,11 @@ Set DNS to: `172.18.0.4`
 
 📸 
 <p align="center">
-Client DNS settings
-<img width="1481" height="888" alt="image" src="https://github.com/user-attachments/assets/e941c9da-3301-4097-83bb-3db0560734a3" />
+  <img src="https://github.com/user-attachments/assets/e941c9da-3301-4097-83bb-3db0560734a3" width="750">
+  <br>
+  <em>Client Machine DNS Configuration</em>
+</p>
+
 
 ---
 
@@ -210,9 +246,10 @@ Client DNS settings
 
 📸 
 <p align="center">
-Successful domain join
-
-<img width="1557" height="844" alt="image" src="https://github.com/user-attachments/assets/5ee9afe8-d562-481d-a71f-f339209acf4c" />
+  <img src="https://github.com/user-attachments/assets/5ee9afe8-d562-481d-a71f-f339209acf4c" width="750">
+  <br>
+  <em>Successful Domain Join</em>
+</p>
 
 ---
 
@@ -223,15 +260,14 @@ Successful domain join
 
 
 ## Learning Outcomes
-After completing this project, you will have learned:  
-- How to deploy and configure an Active Directory Domain Services environment in Azure  
-- How to plan and configure Azure Virtual Networks and subnets for secure communication  
-- How to deploy Windows Server VMs as Domain Controllers and configure static IPs  
-- How to install AD DS, promote a Domain Controller, and create a new forest  
-- How to create Organizational Units and users for enterprise like structure  
-- How to deploy a client VM and join it to the domain  
-- How to troubleshoot domain join and DNS-related issues  
-- Practical understanding of enterprise-level IT administration and helpdesk-ready skills
+After completing this project, I have learned:  
+- Deploying Windows Server in Azure
+-Configuring AD DS, DNS, and domain authentication
+-Creating OUs and users
+-Joining clients to a domain
+-Troubleshooting DNS & networking issues
+-Using PowerShell for AD automation
+-Understanding enterprise-level IT administration
 
 
 ## Author
@@ -241,5 +277,6 @@ After completing this project, you will have learned:
 - Certifications: CompTIA A+, Zendesk Customer Service Professional  
 
 ---
+
 
 
