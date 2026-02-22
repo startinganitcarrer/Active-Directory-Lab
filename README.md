@@ -65,11 +65,10 @@ Organize all lab resources into a single resource group for easy management and 
 
 **Expected Result:** A dedicated resource group for all lab components.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fd62a641-4e92-4e44-9fa7-30bcbf8485ed" width="750">
+  <img src="https://github.com/user-attachments/assets/802f208b-bed8-45bc-b47d-7ff69b7bec69" width="750">
   <br>
   <em>Resource Group Overview</em>
 </p>
-
 
 
 ## STEP 2: Create Virtual Network (VNet)
