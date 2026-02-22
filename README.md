@@ -45,7 +45,7 @@ Azure Virtual Network (172.18.0.0/16)
 │
 ├── Subnet: IT-Subnet (172.18.0.0/24)
 │     ├── DC01 — Windows Server 2022 (10.18.0.4)
-│     └── CLIENT01 — Windows 10/11
+│     └── CLIENT01 — Windows 10
 │
 └── DNS → Domain Controller (172.18.0.4)
 ```
